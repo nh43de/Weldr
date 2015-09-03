@@ -1,6 +1,6 @@
 # Weldr
 
-Weldr is a extensible Roslyn-based Visual Studio extension that makes it easy to manage and generate code during design time. Some example uses include controller method proxy generation and typescript interface generation for DTOs.
+Weldr is a extensible Roslyn-based Visual Studio extension that makes it easy to manage and generate code during design time. Some example uses include controller method proxy generation, typescript interface generation from classes, and database-driven POCO objects.
 
       
       namespace Namespace.Services {
@@ -33,4 +33,11 @@ Weldr is a extensible Roslyn-based Visual Studio extension that makes it easy to
           Name: string;
           Address: string;
           SubmitDate: Date;
+      }
+      
+      
+      [WeldrImport(Weldr.DB, "dbo.Customers")]
+      public class Customers
+      {
+            //database-driven code output here
       }
